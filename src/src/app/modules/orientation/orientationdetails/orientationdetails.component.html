@@ -1,0 +1,80 @@
+<ion-content>
+  <ion-header class="ion-no-border">
+
+    <ion-list lines="none" style="height: 205px;">
+      <ion-buttons slot="start" style="    color: white;
+      width: 39px;
+      margin-left: 6px;
+      border-radius: 32px;
+      height: 37px;
+      background: #f4f5f87d;    margin-bottom: -11px;
+  ">
+        <ion-button (click)="dismissModal()">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+
+      <ion-item color="primary" style="       --background: rgba(75, 146, 92, 0.6588235294) !important ;--ion-color-base:transparent !important;
+      ">
+        <div> <ion-label class="title_lbl" style="  font-size: 23px !important;    margin-left: 86px;
+
+            "> {{ data?.titre}}</ion-label></div>
+      </ion-item>
+      <ion-item color="primary" style="           --background: rgba(75, 146, 92, 0.6588235294) !important;--ion-color-base:transparent !important;
+      ">
+
+      </ion-item>
+
+    </ion-list>
+    <ion-list class="transactions" style="    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 3px;
+  ">
+
+
+
+
+      <div class="main_content_div">
+
+        <span>
+
+          <div class="card_div">
+
+            <div class="content_div">
+              <div style="    margin-top: -162px;
+              ">
+                <ion-label class="title_lbl" style="    margin-top: -358px;
+            margin-left: 223px;color: gray !important;font-size: 12px !important;"> {{ data?.createdDateTime |
+                  date:'dd-MM-yyyy' }}</ion-label>
+              </div>
+              <ion-label style="  font-size: 14px !important;font-weight:0 !important;color:green
+              "> <img src="../../../assets/imgs/active.png" *ngIf="data?.accesProfil=== true" style="    width: 10px;
+">
+                <p *ngIf="data?.accesProfil=== true" style="    margin-left: 13px;
+    margin-top: -17px;">Profil Accessible</p>
+                <img src="../../../assets/imgs/fermé.png" *ngIf="data?.accesProfil=== false" style="    width: 10px;
+ ">
+                <p *ngIf="data?.accesProfil=== false" style="    margin-left: 13px;
+    margin-top: -17px;">Profil non Accessible</p>
+              </ion-label>
+
+              <div style="margin-top: 16px !important;"> <ion-label style="  font-size: 14px !important;font-weight:0 !important;
+  "> {{ data?.description}}</ion-label></div>
+
+
+
+            </div>
+          </div>
+
+
+
+        </span>
+
+      </div>
+    </ion-list>
+  </ion-header>
+
+
+
+</ion-content>

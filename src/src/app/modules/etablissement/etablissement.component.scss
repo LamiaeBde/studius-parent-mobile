@@ -1,0 +1,306 @@
+.table-header {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
+  * {
+    font-family: Poppins;    }
+  
+  .table-icon {
+    text-align: center;
+  }
+  
+  .table-icon ion-icon {
+    color: gray;
+    cursor: pointer;
+  }
+  .ion-item:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .ta:nth-child(odd) {
+    background-color: #c9c6c699;
+  }
+  ion-item.no-lines .item-inner {
+    border-bottom: none;
+
+  }
+  
+  // .input-wrapper{
+  //   // border: no;
+  // }
+  ion-item.no-lines .item-inner::after {
+    content: none;
+  }
+  
+  .color1 {
+    --background: #94e4b330;
+  }
+  
+  .color2 {
+    --background: #ff000033;
+  }
+  
+  .color3 {
+    --background: #00ff0033;
+  }
+  
+  .color4 {
+    --background: #0000ff33;
+  }
+  
+  .color5 {
+    --background: #ffff0033;
+  }
+  ion-header {
+    ion-list {
+        background: #4B925C;
+        border-radius: 0 0 20px 20px;
+        padding-bottom: 7vh;
+        ion-item {
+            ion-label {
+                font-weight: bold;
+                font-size: 1.2rem;
+                letter-spacing: 0.5px;
+  
+            }
+            ion-avatar {
+                background: white;
+            }
+        }
+    }
+    .popover {
+        margin: 0 8px;
+        ion-searchbar {
+            --border-radius: 20px;
+            margin-top: -30px;
+        }
+    }
+  }
+  ion-header {
+    ion-toolbar {
+        --padding-start: 16px;
+        --padding-end: 16px;
+        ion-title {
+            max-width: 40vh;
+            ion-label {
+                ion-text {
+                    font-size: 1rem;
+                }
+                p {
+                    ion-text {
+                        font-size: 1.3rem !important;
+                    }
+                }
+            }
+        }
+        ion-avatar {
+            height: 2.5rem;
+            width: 2.5rem;
+            border: 1px solid var(--ion-color-tertiary);
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+  }
+ 
+  ion-content {
+    ion-list {
+        background: transparent;
+        ion-item {
+            width: 90%;
+            margin: auto;
+            border-radius: 10px;
+            margin-bottom: 2vh;
+            ion-label {
+                font-size: 1.1rem;
+                p {
+                    font-size: 0.85rem;
+                }
+                .tmargin {
+                    margin-top: 0.3vh;
+                }
+            }
+            ion-text[slot=end] {
+                font-size: 1.2rem;
+                span {
+                    font-weight: 450;
+                }
+            }
+        }
+    }
+}
+
+ion-segment{
+padding-left: 10px;
+padding-right: 10px;
+  --background:none;
+  margin-top: 180px !important;
+
+  margin-top: 6px;
+  ion-segment-button {
+    font-size: 1rem;
+    width: 50px;
+
+   // --border-width: 1px;
+    //border-style: double;
+    --padding-start:8px;
+    --padding-bottom:10px;
+    --padding-end:8px;
+    --padding-top:10px;
+    --background-checked: #4b925c70; 
+      margin-top: 6px;
+    --indicator-color:transparent !important;
+    --color:#4B925C;
+    --color-checked:#ffffff;
+    //font-weight: bold;
+    border-radius: 8px;
+
+  }
+}
+.sc-ion-buttons-md-s ion-button:not(.button-round) {
+  --background: #d7d8da !important;
+  box-shadow: 2px 2px 2px -6px #737373de;
+  --border-radius: 46px;
+}
+.categories {
+  &-name {
+    color: var(--color);
+    font-size: large;
+    font-weight: 600;
+  }
+
+  &-buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.8rem 1rem;
+    padding-bottom: 1.1rem;
+    margin: 1rem;
+    margin-bottom: 1.4rem;
+    margin-right: 0;
+    border-radius: 1.4rem;
+    font-size: larger;
+    color: var(--ion-color-secondary-contrast);
+    background-color: var(--ion-card-background);
+    text-align: left;
+    box-shadow: var(--ion-card-box-shadow);
+
+    ion-icon,
+    .bx-envelope {
+      font-size: xx-large;
+    }
+
+    ion-progress-bar {
+      margin-top: 0.6rem;
+      --background: var(--ion-progressbar);
+    }
+
+    .task-count {
+      color: var(--ion-secondary-text-color);
+      font-size: small;
+    }
+
+    span {
+      margin-bottom: 0.7rem;
+    }
+  }
+}
+
+.business {
+  ion-progress-bar {
+    --progress-background: var(--td-magenta);
+  }
+}
+
+.personal {
+  ion-progress-bar {
+    --progress-background: var(--td-blue);
+  }
+}
+
+.task-list {
+  margin-top: 1rem;
+  padding: 0 1.2rem;
+}
+
+ion-fab {
+  bottom: 40px;
+  right: calc(20px + var(--ion-safe-area-right, 0px));
+}
+  .card-header-container {
+    position: relative;
+  }
+
+  .header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-color: #f2f2f2;
+  }
+// .card {
+//   background-color: #fff;
+//   border-radius: 10px;
+//   border: none;
+//   position: relative;
+//   margin-bottom: 30px;
+//   box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
+// }
+// .l-bg-cherry {
+//   background: linear-gradient(to right, #493240, #f09) !important;
+//   color: #fff;
+// }
+
+// .l-bg-blue-dark {
+//   background: linear-gradient(to right, #373b44, #4286f4) !important;
+//   color: #fff;
+// }
+
+// .l-bg-green-dark {
+//   background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+//   color: #fff;
+// }
+
+// .l-bg-orange-dark {
+//   background: linear-gradient(to right, #a86008, #ffba56) !important;
+//   color: #fff;
+// }
+
+// .card .card-statistic-3 .card-icon-large .fas, .card .card-statistic-3 .card-icon-large .far, .card .card-statistic-3 .card-icon-large .fab, .card .card-statistic-3 .card-icon-large .fal {
+//   font-size: 110px;
+// }
+
+// .card .card-statistic-3 .card-icon {
+//   text-align: center;
+//   line-height: 50px;
+//   margin-left: 15px;
+//   color: #000;
+//   position: absolute;
+//   right: -5px;
+//   top: 20px;
+//   opacity: 0.1;
+// }
+
+// .l-bg-cyan {
+//   background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+//   color: #fff;
+// }
+
+// .l-bg-green {
+//   background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+//   color: #fff;
+// }
+
+// .l-bg-orange {
+//   background: linear-gradient(to right, #f9900e, #ffba56) !important;
+//   color: #fff;
+// }
+
+// .l-bg-cyan {
+//   background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+//   color: #fff;
+// }

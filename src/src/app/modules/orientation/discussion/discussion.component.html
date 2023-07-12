@@ -1,0 +1,66 @@
+
+<ion-header>
+  <ion-toolbar style="--background: linear-gradient(28deg,#206bae,#6bae20);">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons> 
+    <ion-buttons slot="end">
+      <ion-button (click)="presentPopover($event, data?.id,data?.conseillerId , data?.conseiller?.userId)">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="color:white">{{data?.titre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="message-container">
+    <div *ngFor="let message of messagesList" [ngClass]="{
+      'message-right': message.userId === currentUser?.id,
+      'message-left-conseiller': message.userId === message.orientation.conseiller.userID,
+      'message-left-parent': message.userId !== currentUser?.id && message.userId !== message.orientation.conseiller.userID
+    }" class="message">
+      <div class="message-content">
+        <div class="message-text">{{ message.textMessage }}</div>
+        <div class="message-timestamp">{{ message.createdDateTime | date: 'HH:mm' }}</div>
+        <div class="message-date" *ngIf="isYesterday(message.createdDateTime)">{{ message.createdDateTime | date: 'EEE dd MMM' }}</div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ng-container *ngIf="status === 7">
+      <p class="blocked-text">La discussion est bloquée en attente, invite ton parent</p>
+    </ng-container>
+    
+    <ng-container *ngIf="status === 6">
+      <p class="blocked-text">La discussion est bloquée en attente d'accès au profil</p>
+    </ng-container>
+    <ng-container *ngIf="status === 5">
+
+      <p class="blocked-text" style="color: red; font-size: larger;">cette discussion est bloquée</p>
+
+    </ng-container>
+    <ng-container *ngIf="status !== 6 && status !== 7 && status !== 5">
+      <ion-buttons slot="start">
+        <ion-textarea class="whatsapp-input" placeholder="Tapez un message..." [(ngModel)]="messageText"></ion-textarea>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button [disabled]="messageText.trim() === ''" (click)="sendMessage()">
+          <ion-icon slot="icon-only" name="send"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ng-container>
+    
+  </ion-toolbar>
+</ion-footer>
+
+
+
+

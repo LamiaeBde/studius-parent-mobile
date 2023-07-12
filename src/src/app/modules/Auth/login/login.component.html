@@ -1,0 +1,73 @@
+<ion-content [fullscreen]="true">
+  <div id="bg">
+    <img src="../../../assets/imgs/logo.png" >
+  </div>
+    <ion-fab vertical="bottom" edge horizontal="center" slot="fixed" >
+      <ion-fab-button color="white"  >
+        <ion-icon name="close-outline" color="medium"  [routerLink]="['/auth/home']"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  <ion-list lines="none" class="ion-margin" [formGroup]="loginForm">
+    <ion-list-header>Bienvenue !</ion-list-header>
+    <ion-item class="ion-margin">
+      <ion-input placeholder="Entrer le numero ou l'email" type="text" formControlName="username" autocomplete="off" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <ion-input placeholder="Entrer le mote de passe" type="password" autocomplete="off" formControlName="password" clearInput="true"></ion-input>
+    </ion-item>
+    <ion-text color="medium"><p class="ion-margin-horizontal"> <ion-icon name="checkbox-outline"></ion-icon>Réster connecter</p></ion-text>
+
+
+
+
+
+    <ion-text color="medium"><p class="ion-margin-horizontal" (click)="presentAlert()" >Forgot Password?</p></ion-text>
+    
+    
+    
+    
+    
+        <div align="right">
+      <ion-button shape="round" strong="true" class="ion-margin-end"  (click)="login()">
+Se connecter        <ion-icon name="log-in" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+    
+  </ion-list>
+</ion-content>
+
+<!-- <ion-content [fullscreen]="true">
+  <div id="bg">
+    <div class="imdcont animate__animated animate__slideInDown  animate__faster">
+      <img class="hdtext" src="../../../../assets/imgs/studius.svg">
+
+    </div>
+
+    <ion-fab vertical="bottom" edge horizontal="center" slot="fixed">
+      <ion-fab-button color="white" routerLink="/auth">
+        <ion-icon name="close-outline" color="medium"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+  <ion-list [formGroup]="loginForm" lines="none"
+    class="ion-margin animate__animated animate__slideInUp animate__faster">
+    <h2 class="animate__animated animate__slideInLeft animate__faste">Connexion</h2>
+    <ion-item class="ion-margin ion-margin animate__animated animate__slideInLeft animate__faste">
+      <ion-input placeholder="Enter Username" formControlName="email" required type="text" clearInput="true">
+      </ion-input>
+    </ion-item>
+    <ion-item class="ion-margin ion-margin animate__animated animate__slideInLeft animate__faste">
+      <ion-input placeholder="Enter Password" formControlName="password" required type="password" clearInput="true">
+      </ion-input>
+    </ion-item>
+    <ion-text color="medium">
+      <p class="ion-margin-horizontal animate__animated animate__slideInLeft animate__faste">Mot de passe oublié?</p>
+    </ion-text>
+    <div align="right">
+      <ion-button class="btnlog animate__animated animate__slideInRight animate__faste" (click)="save()">
+        S'IDENTIFIER
+        <ion-icon name="log-in" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-list>
+</ion-content> -->

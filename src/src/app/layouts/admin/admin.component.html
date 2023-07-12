@@ -1,0 +1,143 @@
+<!-- <ion-menu contentId="main-content">
+
+  <ion-content id="bg" class="ion-padding" style="--background:#e2e2e23b">
+
+
+    <ion-list-header style="background: linear-gradient(28deg,#206bae,#6bae20);
+                height: 188px;width: 304px;margin-left: -16px;margin-top: -16px; "> <ion-avatar id="avatar" style=" width:66px;
+                  height: 66px;
+                  margin-left: 5px;margin-top: -30px;"> <img alt="Silhouette of a person's head" [src]="imgsrc" />
+      </ion-avatar>
+      <div> Username</div>
+    </ion-list-header>
+
+    <ion-item lines="none" [routerLink]="'/'" style="margin-top: 16px;--background:transparent">
+      <ion-icon name="person-outline" slot="start" style="color:#206bae"></ion-icon>
+      Profil
+    </ion-item>
+
+    <ion-item lines="none" (click)="desconnexion()" style="margin-top: 16px;--background:transparent">
+      <ion-icon name="log-out-outline" slot="start" style="color:#206bae"></ion-icon>
+      <ion-label>
+        Se deconnecter
+      </ion-label>
+
+    </ion-item>
+    <ion-list-header style="margin-top: 461px;   
+  height: 54px;width: 295px;margin-left: -13px;border-radius: 6px;    ">
+
+      <div style="font-size: 23px;">Studius</div>
+      <div style="max-width: 24% !important;"><img alt="Silhouette of a person's head"
+          src="../../../assets/imgs/logo.png" />
+      </div>
+
+
+
+    </ion-list-header>
+
+
+
+  </ion-content>
+
+</ion-menu> -->
+
+  <!-- <ion-header *ngIf="sharedService.showHeader">
+    <ion-toolbar style="--background: linear-gradient(28deg,#206bae,#6bae20);">
+      <ion-menu-toggle>
+        <img src="../../../assets/imgs/icon.png" name="grid" style="padding-left: 15px; border-radius: 20px;">
+
+      </ion-menu-toggle>
+      <ion-text style="padding-left: 15px;"></ion-text>
+
+
+    </ion-toolbar>
+  </ion-header> -->
+  <!-- <ion-header class="ion-no-border" [translucent]="true" *ngIf="sharedService.showHeader">
+    <ion-toolbar>
+    <ion-list lines="none"> 
+      <ion-item color="primary" style="       --background: rgba(75, 146, 92, 0.6588235294) !important ;--ion-color-base:transparent !important;
+      "> 
+       <ion-buttons slot="start">
+        <ion-menu-toggle>
+          <ion-icon name="reorder-two"></ion-icon>
+        </ion-menu-toggle>
+      </ion-buttons>
+      </ion-item>
+      <ion-item color="primary" style="           --background: rgba(75, 146, 92, 0.6588235294) !important;--ion-color-base:transparent !important;
+      ">
+        <ion-label>{{pageTitle}}</ion-label>
+        <ion-avatar slot="end">
+          <img src="../../../assets/imgs/logo.png" style="    padding-top: -21%;
+          padding: -24px !important;
+          width: 57px !important;
+          margin-left: 4% !important;
+          padding-left: -16% !important;
+          border-radius: -30px  !important; 
+          height: 39px !important;
+      " />
+        </ion-avatar>
+      </ion-item>
+    </ion-list>
+  </ion-toolbar>
+  </ion-header> 
+
+
+-->
+<app-menu> </app-menu>
+
+  <div class="ion-page" id="main-content">
+  <ion-header class="ion-no-border" [translucent]="true" *ngIf="sharedService.showHeader">
+        <ion-toolbar>
+        <ion-list lines="none"> 
+          <ion-item color="primary" style="            --background: linear-gradient(14deg, #206baeeb, #6bae20) !important; 
+          ;--ion-color-base:transparent !important;
+          "> 
+           <ion-buttons slot="start">
+            <ion-menu-toggle>
+              <ion-icon name="reorder-two"></ion-icon>
+
+            </ion-menu-toggle>
+
+          </ion-buttons>
+          </ion-item>
+          <ion-item color="primary" style="                 --background: linear-gradient(14deg, #206baeeb, #6bae20) !important; 
+          ;--ion-color-base:transparent !important;
+          ">
+            <ion-label>{{pageTitle}}</ion-label>
+            <ion-avatar slot="end">
+              <img src="../../../assets/imgs/logo.png" style="    padding-top: -21%;
+              padding: -24px !important;
+              width: 57px !important;
+              margin-left: 4% !important;
+              padding-left: -16% !important;
+              border-radius: -30px  !important; 
+              height: 39px !important;
+          " />
+            </ion-avatar>
+          </ion-item>
+        </ion-list>
+      </ion-toolbar>
+      </ion-header> 
+
+  <div style="margin-top: 70px;">
+
+
+    <ion-router-outlet></ion-router-outlet>
+  </div>
+
+
+
+  <ion-tabs (ionTabsDidChange)="onTabChanged($event)">
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="dashboard">
+        <ion-icon [name]="selectedTab === 'dashboard' ? 'home' : 'home-outline'"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="actualite">
+        <ion-icon [name]="selectedTab === 'actualite' ? 'newspaper' : 'newspaper-outline'"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="etablissement">
+        <ion-icon [name]="selectedTab === 'etablissement' ? 'school' : 'school-outline'"></ion-icon>
+      </ion-tab-button>
+    
+    </ion-tab-bar>
+  </ion-tabs>

@@ -1,0 +1,182 @@
+<ion-content>
+  <ion-segment [(ngModel)]="selectedSegment">
+    <ion-segment-button value="true" style="width:50px">
+      <span class="bn31span">Non Archive</span>
+    </ion-segment-button>
+    <ion-segment-button value="false">
+      <span class="bn31span"> Archive</span>
+    </ion-segment-button>
+
+  </ion-segment>
+  <div class="table-row">
+    <ion-list>
+      <ion-item>
+        <ion-select class="always-flip" toggleIcon="caret-down-sharp" interface="popover"
+          label="Icon flips on both modes" placeholder="Etudiant List">
+          <ion-select-option *ngFor="let etudiant of etudiants" [value]="etudiant">
+            {{ etudiant }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+    <ng-container *ngIf="selectedSegment === 'true'">
+      <ion-row justify-content-center>
+        <ion-col size-md="6" size-lg="4" style="margin-bottom: -85px;">
+          <ion-item-sliding *ngFor="let item of tableau">
+            <ion-item style="--border-style:none; ">
+              <ion-card class="ion-text-center" style="     height: 121px;
+  width: 351px;
+  border-radius: 8px;
+  border-color: rgba(128, 128, 128, 0.14);
+  border-width: 1px;
+  border-style: double;
+  --background: #ffffffa1;
+  background: #ffffffa1;" *ngIf="!item.archive" >
+
+                <div class="card-header-container">
+                  <div class="header-background" [style.background]="getRandomColor()"> <ion-icon name="school-outline"
+                      style="      height: 35px;
+                      width: 22px;
+                      margin-left: -260px;
+                      color: black;"></ion-icon></div>
+                  <ion-card-header >
+                    <p style="       margin-top: 30px;
+                    margin-left: -230px;
+                    font-size: 15px;
+                    color: black;">{{ item.etablissementLibelle }}</p>
+                    <p style="margin-top: -40px;
+                    margin-left: 202px;
+                    font-weight: bold;
+                    color: black;">{{
+                      item.anneeScolaire }}</p>
+                    <p style="    margin-top: -10px;
+                    margin-left: -225px;
+                    color: green;">{{ item.libelle }}</p>
+                    <p style="    margin-top: -15px;
+                    margin-left: -190px;">{{ item.filiere }}</p>
+                    <p style="    margin-top: -38px;
+                    margin-left: 190px;
+                    color: green;">{{ item.session }}</p>
+                  </ion-card-header>
+                </div>
+
+                <ion-card-content>
+                </ion-card-content>
+              </ion-card>
+
+            </ion-item>
+
+            <ion-item-options side="start">
+              <ion-item-option (click)="archiverClasse(item.id)" style="--ion-color-base: orange !important;--background:orange;height: 111px;
+            border-radius: 10px;
+            margin-top: 10px;">
+                <ion-icon slot="icon-only" name="archive-outline"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+    <ng-container *ngIf="selectedSegment === 'false'">
+      <ion-row justify-content-center>
+        <ion-col size-md="6" size-lg="4" style="margin-bottom: -85px;">
+          <ion-item-sliding *ngFor="let item of tableau">
+            <ion-item style="--border-style:none; ">
+              <ion-card class="ion-text-center" style="     height: 121px;
+  width: 351px;
+  border-radius: 8px;
+  border-color: rgba(128, 128, 128, 0.14);
+  border-width: 1px;
+  border-style: double;
+  --background: #ffffffa1;
+  background: #ffffffa1;"
+*ngIf="item.archive" (click)="showmenu(item.id, idEtudiant)">
+
+                <div class="card-header-container">
+                  <div class="header-background" [style.background]="getRandomColor()"> <ion-icon name="school-outline"
+                      style="      height: 35px;
+                      width: 22px;
+                      margin-left: -260px;
+                      color: black;"></ion-icon></div>
+                  <ion-card-header>
+                    <p style="       margin-top: 30px;
+                    margin-left: -230px;
+                    font-size: 15px;
+                    color: black;">{{ item.etablissementLibelle }}</p>
+                    <p style="margin-top: -40px;
+                    margin-left: 202px;
+                    font-weight: bold;
+                    color: black;">{{
+                      item.anneeScolaire }}</p>
+                    <p style="    margin-top: -10px;
+                    margin-left: -225px;
+                    color: green;">{{ item.libelle }}</p>
+                    <p style="    margin-top: -15px;
+                    margin-left: -190px;">{{ item.filiere }}</p>
+                    <p style="    margin-top: -38px;
+                    margin-left: 190px;
+                    color: green;">{{ item.session }}</p>
+                  </ion-card-header>
+                </div>
+
+                <ion-card-content>
+                </ion-card-content>
+              </ion-card>
+            </ion-item>
+            <ion-item-options side="start">
+              <ion-item-option (click)="archiverClasse(item.id)" style="--ion-color-base: orange !important;--background:orange;height: 111px;
+            border-radius: 10px;
+            margin-top: 10px;">
+                <ion-icon slot="icon-only" name="archive-outline"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+
+  </div>
+  <div>
+    <ion-buttons style="position: absolute; bottom: 10px; right: 10px;                --background: #898b92 !important;                    box-shadow: 2px 2px 2px -6px #7589c37d;
+--border-radius:46px;
+  ">
+      <ion-button (click)="openModal1()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+</ion-content>
+
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+<div class="col-md-10 ">
+    <div class="row ">
+        <div class="col-xl-3 col-lg-6" style="margin-top: 120px;">
+            <div class="card l-bg-cherry">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="mb-4 ">
+                        <h5 class="card-title mb-0">New Orders</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                3,243
+                            </h2>
+                        </div>
+                        <div class="col-4 text-right">
+                            <span>12.5% <i class="fa fa-arrow-up"></i></span>
+                        </div>
+                    </div>
+                    <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                        <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+    </div>
+</div> -->

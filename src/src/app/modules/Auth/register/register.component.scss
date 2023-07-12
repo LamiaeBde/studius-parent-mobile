@@ -1,0 +1,114 @@
+#bg {
+    height: 50%;
+    width: 500px;
+    background: linear-gradient(#2570A2, #4B925C);
+
+  //  background: var(--ion-color-dark) url('../../../../assets/imgs/leaves.jpg') no-repeat center center/cover;
+    border-radius: 0 0 45% 45%;
+    margin-left: -21vw;
+    position: relative;
+    img{
+        width: 86% !important;
+        padding-top: 7%;
+        margin-left: 11%;
+    }
+}
+ion-fab {
+    ion-icon {
+        font-size: 2.5rem;
+    }
+}
+
+ion-list {
+    margin-top: 6vh;
+    ion-list-header {
+        font-weight: 1000;
+        font-size: 1.5rem;
+    }
+    ion-item {
+        border: 1px solid var(--ion-color-light);
+        border-radius: 20px;
+        -webkit-box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+        -moz-box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+        box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+    }
+    p {
+        font-size: 0.8rem;
+        padding-left: 5vw;
+    }
+}
+
+
+.picedit {
+    width: 8% !important;
+    height: 234px !important;
+    padding-top: 22px !important;
+    padding-left: 45px !important;
+
+    img {
+        border-radius: 20px;
+    }
+}
+.profilepic {
+    position: relative;
+    width: 214px;
+    height: 208px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: pink;
+}
+
+.profilepic:hover .profilepic__content {
+    opacity: 1;
+}
+
+.profilepic:hover .profilepic__image {
+    opacity: .5;
+}
+
+.profilepic__image {
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+
+.profilepic__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+.profilepic__icon {
+    color: white;
+    padding-bottom: 8px;
+}
+
+.fas {
+    font-size: 20px;
+}
+
+.profilepic__text {
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 50%;
+    text-align: center;
+}
+ion-button {
+    --ion-color-primary: linear-gradient(
+      135deg,
+      #206bae 20%,
+      #6bae20 100%
+    ) !important;
+    --ion-button-round-border-radius: 10px 50px 10px 50px;
+    --ion-button-border-radius: 10px 50px 10px 50px;
+    --ion-border-radius: 10px 50px 10px 50px;
+    --border-radius: 10px 50px 10px 50px;
+  }

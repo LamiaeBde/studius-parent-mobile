@@ -1,0 +1,91 @@
+<ion-content [fullscreen]="true">
+  <div id="bg">
+    <img src="../../../assets/imgs/logo.png">
+
+    <ion-fab vertical="bottom" edge horizontal="center" slot="fixed">
+      <ion-fab-button color="white" >
+        <ion-icon name="close-outline" color="medium"  [routerLink]="['/auth/home']"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+<form [formGroup]="Userform" (ngSubmit)="signUp()" >
+ 
+   <ion-list lines="none" class="ion-margin">
+  <ion-list-header>Bienvenue !</ion-list-header>
+ <!--<ion-item class="ion-margin">
+    <ion-input type="file"  (change)="filechange($event)"   clearInput="true"></ion-input>
+  </ion-item>--> 
+  <ion-item class="ion-margin">
+    <ion-input formControlName="Nom" placeholder="Entrer le nom" type="text" clearInput="true"></ion-input>
+  </ion-item>
+  <ion-item class="ion-margin">
+    <ion-input  formControlName="Prenoms"placeholder="Entrer le prenom" type="text" clearInput="true"></ion-input>
+  </ion-item>
+ 
+  <ion-item class="ion-margin animate__animated animate__slideInLeft animate__faste">
+    <ion-intl-tel-input defaultCountryiso="ma" formControlName="PhoneNumber">
+    </ion-intl-tel-input>
+  </ion-item>
+  <ion-item class="ion-margin">
+    <ion-input formControlName="Email" placeholder="Entrer l'email" type="text" clearInput="true"></ion-input>
+  </ion-item>
+  <ion-item class="ion-margin">
+    <ion-input formControlName="DateNaissance" placeholder="Date de Naissance" type="date" clearInput="true"></ion-input>
+  </ion-item> 
+  <ion-item  style="width: 332px;margin-left: 15px;"> <ion-label position="floating">Pays</ion-label>
+    <ion-select  (ionChange)="loadVillesByPaysId($event)">
+      <ion-select-option *ngFor="let pays of paysList" [value]="pays.id">{{ pays.libelle }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+ 
+  
+
+
+<ion-item class="input-box" style="width: 332px;margin-left: 15px;margin-top: 10px;">
+  <ion-label position="floating">Ville</ion-label>
+  <ion-select formControlName="villeId">
+    <ion-select-option *ngFor="let ville of villeList" [value]="ville.id">{{ ville.libelle }}</ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-item class="ion-margin">
+  <ion-input  formControlName="CodeEtablissementEtudiant"  placeholder="Code Etudiant" type="text" clearInput="true"></ion-input>
+</ion-item>
+  <ion-item class="ion-margin">
+    <ion-input formControlName="Password" placeholder="Entrer le mot de passe" type="password" clearInput="true"></ion-input>
+  </ion-item>
+  <ion-item class="ion-margin">
+    <ion-input  formControlName="ConfirmPassword" placeholder="Confirmer le mot de passe" type="password" clearInput="true"></ion-input>
+  </ion-item>
+
+
+<!-- <ion-item class="ion-margin">
+    <ion-input type="file"  (change)="filechange($event)"   clearInput="true"></ion-input>
+  </ion-item>-->
+ 
+ 
+  <!--<ion-button expand="block" class="ion-margin" >
+    Scan QR Code
+  </ion-button>
+  <ion-item *ngIf="scannedResult"><ion-label class="ion-text-wrap">
+      Scanned Result:{{scannedResult}}
+    </ion-label></ion-item>-->
+    <ion-button  shape="round" strong="true" class="ion-margin-end"  expand="block" (click)="addPhoto()" style="width :258px;margin-left: 44px;">
+      <ion-icon name="image"   slot="start"></ion-icon>
+      Ajouter image
+    </ion-button> 
+    <img [src]="selectedImage?.webPath" (onload)="filechange($event)" />
+    <div class="flex">
+      <div class="img-box">
+      </div>
+    </div>
+  
+  <div align="right">
+    <ion-button shape="round" strong="true" class="ion-margin-end" type="submit" >
+      Suivant <ion-icon name="log-in" slot="end"></ion-icon>
+    </ion-button>
+  </div>
+</ion-list>
+</form>
+ 
+
+</ion-content>

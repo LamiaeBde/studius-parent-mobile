@@ -1,0 +1,406 @@
+<ng-container>
+  <ion-content *ngIf="orientations.length === 0" style="margin-top: 70px;">
+
+
+
+    <div class="contentor">
+
+      <div class="main-header">
+        <ion-grid class="gridcon">
+          <ion-row>
+            <ion-col size="6">
+              <ion-label>
+
+                <p>
+
+
+                </p>
+              </ion-label>
+            </ion-col>
+            <ion-col size="6" class="ion-text-end">
+
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-margin-horizontal ion-margin-top">
+            <ion-col>
+
+
+            </ion-col>
+
+          </ion-row>
+          <ion-row class="ion-margin-horizontal">
+            <ion-card class="ion-text-center" style="  
+               height: 392px;
+            width: 431px;
+            margin-top: 44px;
+            border-radius: 14px;">
+              <ion-card-header style="margin-top: 10px;">
+                <div align="center" style="    margin-top: 12px;
+                ">
+                  <ion-thumbnail>
+                    <img src="../../../assets/imgs/bibliotheque.png" style="    width: 101% !important;
+                    height: 129% !important;" />
+                  </ion-thumbnail>
+                </div>
+
+              </ion-card-header>
+
+              <ion-card-content style="margin-top: 10px;">
+                <ion-label>
+                  <span
+                    style="background: linear-gradient(45deg, #2570a3ab, #4B925C); -webkit-background-clip: text; -webkit-text-fill-color: transparent;font-size: 25px;">Bienvenue</span><br>
+                  <span style="color: #2570a3ab;font-size: 25px;">sur</span><br>
+                  <span style="color:linear-gradient(45deg, #2570a3ab, #4B925C);font-size: 25px;">orientation</span><br>
+                </ion-label>
+                <ion-button shape="square" size="small"
+                  style="    margin-top: 83px; --background: linear-gradient(28deg,#206bae,#6bae20);;height: 42px;"
+                  (click)="openModal1()">
+                  <ion-text style="color:white">orientation</ion-text>
+                  <ion-icon name="add" style="color:white" slot="end"></ion-icon>
+                </ion-button>
+              </ion-card-content>
+            </ion-card>
+          </ion-row>
+
+        </ion-grid>
+      </div>
+
+
+
+    </div>
+
+
+  </ion-content>
+
+
+</ng-container>
+
+
+
+<ion-content *ngIf="orientations.length > 0" padding style="padding-top: 162px!important;">
+
+  <ion-grid style="    margin-top: 141px;
+  ">
+
+    <div class="popover" style="    margin-top: 10px;
+    ">
+      <ion-searchbar style="margin-top: 20px; --border-radius: 20px;width:375px " [(ngModel)]="searchTerm"
+        placeholder="Rechercher" (ionChange)="filterOrientations()"></ion-searchbar>
+    </div>
+    <ion-segment [(ngModel)]="selectedSegment">
+      <ion-segment-button value="EnCours">
+        <span class="bn31span">Active</span>
+      </ion-segment-button>
+      <ion-segment-button value="Terminé">
+        <span class="bn31span">Non Active</span>
+      </ion-segment-button>
+
+    </ion-segment>
+
+    <ion-list>
+      <ion-item>
+        <ion-select class="always-flip" toggleIcon="caret-down-sharp" interface="popover"
+        label="Icon flips on both modes" placeholder="Classes List" (ionChange)="getOrientationByEtudiant($event.target)">
+        <ion-select-option *ngFor="let classe of tableau" [value]="classe.value" >{{ classe.libelle
+            }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <div *ngFor="let orientation of filteredOrientations">
+      <ion-row justify-content-center *ngIf="selectedSegment === 'Terminé' && orientation.statut ===4 ">
+        <ion-col size-md="6" size-lg="4" style="    margin-bottom: -85px;
+        ">
+          <ion-item-sliding>
+
+            <!-- <ion-list class="transactions">
+
+              <div class="main_content_div" style="    margin-left: 11px;
+              ">
+                <span>
+                  <div class="card_div" (click)="ShowDetails(orientation.id)" style="    margin-left: 2px!important;
+                  margin-right: 3px!important;">
+                    <img src="../../../assets/imgs/fermé.png" class="fermé">
+                    <div class="content_div">
+                      <ion-label class="title_lbl" style="    margin-top: 12px;
+
+">{{orientation.titre}}</ion-label>
+                      <div class="div_lbl"> <ion-label class="small_lbl"> {{ orientation.createdDateTime |
+                          date:'dd-MM-yyyy' }}</ion-label></div>
+                      <div class="div_lbl2" style="    margin-top: -39px;
+                  color: gray;"> <ion-label class="lbl"
+                          [innerHTML]="getDescriptionSnippet(orientation.description)"></ion-label>
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
+
+                </span>
+
+              </div>
+
+            </ion-list> -->
+                  <div class="card card-margin" style="          height: 133px;
+
+
+                  margin-top: 22px;
+                  width: 358px;
+                  margin-left: 8px;
+              
+                  ">
+
+              <div class="card-body pt-0" (click)="ShowDetails(orientation.id)">
+                <div class="widget-49">
+                  <div class="widget-49-title-wrapper" style="    margin-top: 9px;
+                      ">
+                    <div class="widget-49-date-primary">
+                      <span class="widget-49-date-day">{{ orientation.createdDateTime | date:' d'
+                        }}</span>
+                      <span class="widget-49-date-month">{{ orientation.createdDateTime | date:'MMM '
+                        }}</span>
+                    </div>
+                    <div class="widget-49-meeting-info">
+                      <span class="widget-49-pro-title">{{orientation.titre}}</span>
+                      <span class="widget-49-meeting-time"> <img src="../../../assets/imgs/fermé.png" style="        width: 27% !important;
+                                padding-top: 15%;
+                                margin-left: -2%;;">
+                        <p style="        margin-top: -16px;
+                                margin-left: 15px;
+                            ">Fermé</p>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="widget-49-meeting-points">
+                    <div class="widget-49-meeting-item" style="margin-left: 87px;"><span
+                        [innerHTML]="getDescriptionSnippet(orientation.description)"></span></div>
+
+                  </div>
+                  <div class="widget-49-meeting-action">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ion-item-options side="start">
+              <ion-item-option color="success">
+                <ion-icon slot="icon-only" name="checkmark-outline" style="    width: 37px;
+                height: 82px;
+                border-radius: 10px;
+                margin-left: -2px;"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-col>
+      </ion-row>
+
+
+
+
+      <ion-row justify-content-center
+        *ngIf="selectedSegment === 'EnCours' && orientation.statut === 3 || orientation.statut === 6 || orientation.statut === 7|| orientation.statut === 2 || orientation.statut === 5">
+
+
+        <ion-col size-md="6" size-lg="4">
+          <ion-item-sliding>
+            <div
+              *ngIf="orientation.statut === 3 || +orientation.statut===6 ||+orientation.statut===7 ||orientation.statut === 5"
+              style="--border-style:none;           height: 426px;
+              ;
+              margin-left: 19px;
+              margin-top: 10px;">
+
+              <!-- <ion-list class="transactions">
+                <ion-item-sliding (ionSwipe)="Chat(orientation.id, orientation?.conseiller?.userId)">
+                  <ion-item style="--border-style:none;">
+                    <div class="main_content_div" style="    margin-left: 11px;
+                    ">
+                      <span>
+                        <div class="card_div" (click)="ShowDetails(orientation.id)" style="    margin-left: 2px!important;
+                        margin-right: 3px!important;margin-top: 5px;">
+                          <img src="../../../assets/imgs/active.png" class="fermé">
+                          <div class="content_div">
+                            <ion-label class="title_lbl" style="    margin-top: 12px;
+                          ">{{orientation.titre}}</ion-label>
+                            <div class="div_lbl">
+                              <ion-label class="small_lbl">{{ orientation.createdDateTime | date:'dd-MM-yyyy'
+                                }}</ion-label>
+                            </div>
+                            <div class="div_lbl2" style="margin-top: -39px; color: gray;">
+                              <ion-label class="lbl"
+                                [innerHTML]="getDescriptionSnippet(orientation.description)"></ion-label>
+
+                            </div>
+                          </div>
+                        </div>
+                      </span>
+                    </div>
+                  </ion-item>
+
+
+
+
+
+                  <ion-item-options side="start">
+                    <ion-item-option color="success" (click)="Chat(orientation.id,orientation?.conseiller?.userId)"
+                      style="    width: 37px;
+                height: 82px;
+                border-radius: 10px;
+                margin-left: -2px;">
+                      <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </ion-item-option>
+                  </ion-item-options>
+
+                </ion-item-sliding>
+
+              </ion-list> -->
+              <div class="pt-2">
+                <div class="two">
+                  <ion-icon name="information-circle-outline" style="margin-top: 7px;
+                  color: black;
+                  margin-left: 238px;
+                  height: 29px;
+                  width: 57px;" (click)="ShowDetails(orientation.id)"></ion-icon>
+                  <div class="d-flex justify-content-end px-3 pt-1" style="    margin-top: -32px;
+                  "><i class="mdi mdi-star-outline pr-1 star"></i><i class="mdi mdi-dots-horizontal dot"></i></div>
+                  <div class="px-3" style="    margin-top: -9px;
+                  ">
+                    <div class="widget-49-date-primary">
+                      <span class="widget-49-date-day">{{ orientation.createdDateTime | date:' d'
+                        }}</span>
+                      <span class="widget-49-date-month">{{ orientation.createdDateTime | date:'MMM '
+                        }}</span>
+                    </div>
+                  </div>
+                  <div class="px-3 pt-3">
+                    <h3 class="name" style=" margin-top: -7px;
+                    margin-left: 6px;">{{orientation.titre}}</h3>
+                    <p class="quote2" style="           margin-top: -5px;
+
+                    ;
+                    "><ion-label class="lbl" [innerHTML]="getDescriptionSnippet2(orientation.description)"></ion-label>
+                    </p>
+                  </div>
+
+                  <div class="d-flex justify-content-between  px-3 align-items-center pb-3" style="          margin-top: -17px;
+
+
+                  ">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <span class="quote2 pl-2"><img src="../../../assets/imgs/active.png" class="fermé" style="    width: 16% !important;    margin-top: -7% !important;
+
+                      "> Active </span>
+                    </div>
+                    <div style="    background: linear-gradient(14deg, rgb(32 107 174 / 61%), #6bae20a3);
+                  margin-left: 1xp;
+                  border-radius: 20px;
+                  width: 117px;
+                  /* margin-top: -10px; */
+                                    height: 29px;
+                                " (click)="Chat(orientation.id,orientation?.conseiller?.userId)"><ion-icon name="logo-wechat" style="
+                                color: black;
+                      margin-left: -84px;
+                      height: 22px;
+                      width: 140px;
+                      margin-top: 2px;
+
+                                  "></ion-icon>
+                                        <p style="    margin-top: -29px;
+                  color: black;">Chater</p>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div *ngIf="selectedSegment === 'EnCours' && orientation.statut === 2" style="--border-style:none;           height: 426px;
+            ;
+            margin-left: 19px;
+            margin-top: 10px;">
+              <div class="pt-2">
+                <div class="two">
+                  <ion-icon name="information-circle-outline" style="margin-top: 7px;
+                  color: black;
+                  margin-left: 238px;
+                  height: 29px;
+                  width: 57px;" (click)="ShowDetails(orientation.id)"></ion-icon>
+                  <div class="d-flex justify-content-end px-3 pt-1" style="    margin-top: -32px;
+                  "><i class="mdi mdi-star-outline pr-1 star"></i><i class="mdi mdi-dots-horizontal dot"></i></div>
+                  <div class="px-3" style="    margin-top: -9px;
+                  ">
+                    <div class="widget-49-date-primary">
+                      <span class="widget-49-date-day">{{ orientation.createdDateTime | date:' d'
+                        }}</span>
+                      <span class="widget-49-date-month">{{ orientation.createdDateTime | date:'MMM '
+                        }}</span>
+                    </div>
+                  </div>
+                  <div class="px-3 pt-3">
+                    <h3 class="name" style=" margin-top: -7px;
+                    margin-left: 6px;">{{orientation.titre}}</h3>
+                    <p class="quote2" style="           margin-top: -5px;
+
+                    ;
+                    "><ion-label class="lbl" [innerHTML]="getDescriptionSnippet2(orientation.description)"></ion-label>
+                    </p>
+                  </div>
+
+                  <div class="d-flex justify-content-between  px-3 align-items-center pb-3" style="          margin-top: -12px;
+                  margin-left: -9px;
+
+
+                  ">
+                    <div class="d-flex justify-content-start align-items-center">
+                      <span class="quote2 pl-2"><img src="../../../assets/imgs/encours.png" class="fermé" style="    width: 16% !important;    margin-top: -7% !important;
+
+                      "> EnCours </span>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+
+          </ion-item-sliding>
+        </ion-col>
+      </ion-row>
+
+
+    </div>
+    <ion-grid>
+      <ion-row justify-content-center style="flex-direction: column-reverse;" *ngIf="isNoFilteredOrientations()">
+        <ion-col size-md="6" size-lg="4">
+          <ion-item-sliding>
+            <ion-item style="--border-style:none">
+              <div>
+                <ion-buttons slot="start" style=" color: gray;
+                width: 39px;
+                margin-left: 6px;
+                border-radius: 32px;
+                height: 37px;
+                background: #bdc4d87d;
+                margin-top: 430px;
+                margin-left: 291px;
+                    box-shadow: 2px 2px 2px -6px #bdc4d87d;
+                ">
+                  <ion-button (click)="openModal1()">
+
+                    <ion-icon name="add-outline"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </div>
+            </ion-item>
+          </ion-item-sliding>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
+</ion-content>

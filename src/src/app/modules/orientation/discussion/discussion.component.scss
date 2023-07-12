@@ -1,0 +1,86 @@
+.message-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  .message-right {
+    align-self: flex-end;
+    background-color: #f8eae1;
+    color: #3b77ef;
+    border: 2px solid  #f8eae1;;
+  }
+  
+  .message-left-conseiller {
+    align-self: flex-start;
+    background-color: #f5f7e1;
+    color: #408dec;
+    border: 2px solid #ade9e9;
+  }
+  
+  .message-left-parent {
+    align-self: flex-start;
+    background-color: #e2f3f0;
+    color: #24978d;
+    border: 2px solid #43aba3;
+  }
+  .message-timestamp {
+    font-size: 12px;
+    color: #999999;
+  }.message-date {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #888;
+  }
+  
+  .message-date:before {
+    content: "Hier - ";
+  }
+  
+  ion-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  .whatsapp-input {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    height: 40px; 
+    overflow: hidden; 
+    display: flex;
+    align-items: center; 
+  }
+  
+  .whatsapp-input::placeholder {
+    color: #999999;
+    text-align: center; 
+  }
+  
+  ion-icon {
+    font-size: 24px;
+  }
+  .invitation-status-message {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .blocked-text {
+    color: #999999;
+    font-weight: bold;
+    /* Ajoutez d'autres styles CSS selon vos besoins */
+  }
+  

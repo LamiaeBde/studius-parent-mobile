@@ -1,0 +1,65 @@
+<!--
+<ion-menu contentId="main-content" id="content2" >
+  <ion-header>
+  
+  </ion-header>
+  
+  <ion-content class="ion-padding"  id="content2">
+
+    <img src="../../../assets/imgs/logo.png" style="margin-block: 54px;" >
+<ion-button  class="registerBtn" expand="block" >Change mood<ion-toggle (ionChange)="toogleTheme($event)"></ion-toggle><br /><br />
+</ion-button>
+<ion-button routerDirection="back" routerDirection="back" expand="block" fill="outline" >Language</ion-button>
+  </ion-content>
+    
+</ion-menu>
+<div class="ion-page" id="main-content">
+    <ion-toolbar style="background: gainsboro!important">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+  <ion-content class="ion-padding" id="content">
+    <img src="../../../assets/imgs/logo.png" >
+
+    <ion-card style="margin-top: -144px;" >
+      <ion-card-content class="ion-padding">
+        
+        <h2>Bienvenue sur STUDIUS</h2>
+        <ion-button routerLink="login" class="registerBtn" expand="block" [routerLink]="['/login']">Connexion</ion-button>
+        <ion-button routerDirection="back" routerDirection="back" expand="block" fill="outline" [routerLink]="['/register']">S'inscrire</ion-button>
+      </ion-card-content>
+    </ion-card>  </ion-content>
+</div>
+
+-->
+<ion-menu contentId="main-content">
+ 
+  <ion-content  id="logo" class="ion-padding" style="--background:#e2e2e23b">
+    <img  src="../../../assets/imgs/logo.png">
+    
+    <ion-item lines="none" [routerLink]="'/'" style="margin-top: 16px;--background:#2dd36f30;border-radius:13px">
+      <ion-toggle (ionChange)="toogleTheme($event)"></ion-toggle>      Change mood
+    </ion-item>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  
+  <ion-content class="ion-padding" id="content">
+    <ion-menu-toggle>
+      <ion-icon name="menu"></ion-icon>
+    </ion-menu-toggle>
+    <img src="../../../assets/imgs/logo.png"  >
+
+    <ion-card  >
+      <ion-card-content class="ion-padding">
+        
+        <h2   >Bienvenue sur STUDIUS</h2>
+        <ion-button routerLink="login" class="registerBtn" expand="block" [routerLink]="['/auth/login']">Connexion</ion-button>
+        <ion-button routerDirection="back" routerDirection="back" expand="block" fill="outline" [routerLink]="['/auth/register']">S'inscrire</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</div>
+

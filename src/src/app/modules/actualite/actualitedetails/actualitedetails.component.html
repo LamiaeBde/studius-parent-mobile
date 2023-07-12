@@ -1,0 +1,95 @@
+<!-- <ion-header>
+  <ion-toolbar style="--background: linear-gradient(28deg, #206bae, #6bae20);">
+    <ion-buttons slot="start" style="margin-left: -250px;">
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="chevron-back"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="color: white; text-align: center;">Détail orientation</ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-back-button></ion-back-button>
+
+    <ion-card-subtitle id="date">{{ data?.datePublication | date:'medium'}}</ion-card-subtitle>
+
+    <div id="divi">
+      <swiper [config]="config">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let photo of data?.actualiteImages">
+            <img alt="img 1" [src]="'data:image/png;base64,'+photo.bytefile">
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+      </swiper>
+    </div>
+
+    <div id="divcontainer">
+     
+      <div>
+        <ion-title id="titledesc">{{ data?.titre }}</ion-title>
+      </div>
+
+      <div id="desc">
+        {{ data?.description }}
+      </div>
+    </div>
+  </div>
+</ion-content> -->
+
+<ion-content>
+  <div class="header">
+    <ion-buttons style="    margin-top: -18px;
+    ">
+      <ion-button (click)="dismissModal()">
+        <ion-icon slot="icon-only" color='light' name="arrow-back">
+          
+        </ion-icon>
+      </ion-button>
+  
+  
+    </ion-buttons>
+   
+        <ion-icon *ngIf="!data.countLikes " (click)="likeButtonClick(data?.id)" slot="end" color='light'  name="heart-outline" style="    width: 56px;
+        height: 22px;
+    "></ion-icon>
+        <ion-icon *ngIf="data.countLikes " (click)="likeButtonClick(data?.id)" slot="end" color="danger" name="heart" style="    width: 56px;
+        height: 22px;
+    "></ion-icon>     
+  
+  
+  </div>
+  
+  <div class="card">
+    <div class="image">
+      <swiper [config]="config">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngFor="let photo of data?.actualiteImages" style="    width: 61%;
+          ">
+  
+      <img [src]="'data:image/png;base64,'+photo.bytefile">
+  
+      </div>
+      </div>
+      <div class="swiper-pagination"></div>
+  
+      </swiper>
+    </div>
+  <div class="card-content">
+  
+    <div class="card-title">
+      <h1 class="ion-no-margin" style="    color: #367ba7;
+      ">{{ data?.titre }}</h1>
+      <p class="ion-no-margin" style="color: gray;    margin-bottom: 65px;
+      ">{{ data?.datePublication |  date:'dd-MM-yyyy'}}</p>
+    </div>
+    <div class="about">
+  <p>        {{ data?.description }}
+  </p>
+    </div>
+  </div>
+  </div>
+  </ion-content>

@@ -1,0 +1,180 @@
+
+<ion-header>
+  <ion-toolbar style="--background: linear-gradient(28deg,#206bae,#6bae20);">
+    <ion-buttons slot="start" style="    margin-left: 10px;       margin-left: 15px!important;
+
+    
+    ">
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="close" style="    margin-bottom: -36px;    margin-left: -9px;
+
+        "></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="color:white;">Détail orientation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="    --background: #52985117;
+" >
+  <!-- <form [formGroup]="Orientationform" (ngSubmit)="addOrientation()" >
+
+ <ion-slides [options]="slideOpts" (ionSlideDidChange)="slideChanged()">
+  <ion-slide style="height: 583px !important;">
+    <div class="step-header">
+      <p class="step-text">
+        <span class="popin-text">Step N° 1</span>
+      </p>
+    </div>
+
+    <ion-card class="custom-card" style="    background: transparent;
+    ">
+      <ion-card-header class="custom-header">
+       
+      Information Orientation
+
+      </ion-card-header>
+
+      <ion-card-content>
+     
+        <div class="form-group">
+        <input type="text" id="regular1" class="form-control " formControlName="titre" placeholder="Entrer le titre">
+        </div>
+        <ion-list-header style="color: #2570a3; font-size: 16px; margin-top: 29px;">
+         <p>Accéder à mon profil?</p> 
+        </ion-list-header>
+        
+        <ion-list style="   margin-top: -12px; background: transparent;">
+          <ion-radio-group formControlName="accesProfil">
+            <ion-item lines="none" class="custom-radio" style="   --background: transparent;
+            ">
+              <ion-label>
+                <span class="custom-label-text">Oui</span>
+              </ion-label>
+              <ion-radio value="true"></ion-radio>
+            </ion-item>
+            <ion-item lines="none" class="custom-radio" style="    --background: transparent;
+            ">
+              <ion-label>Non</ion-label>
+
+              <ion-radio value="false">
+
+              </ion-radio>
+
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      
+      </ion-card-content>
+    </ion-card>
+    
+  </ion-slide>
+
+  <ion-slide style="height: 583px !important;">
+    <div class="step-header">
+      <p class="step-text">
+        <span class="popin-text">Step N° 2</span>
+      </p>
+    </div>
+
+    <ion-card class="custom-card" style="background: transparent;">
+      <ion-card-header class="custom-header">
+        Information Orientation
+      </ion-card-header>
+      <ion-card-content style="margin-top: 54px;">
+        <ion-item class="ion-margin" style="--background:transparent">
+          <ion-label position="floating" class="custom-label">Entrer la description</ion-label>
+          <ion-textarea formControlName="description" rows="5" class="custom-input"></ion-textarea>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    
+    
+    
+  </ion-slide>
+
+    <ion-slide style="height: 583px !important;">
+      <div class="step-header">
+          <p class="step-text">
+            <span class="popin-text">Step N° 3</span>
+          </p>
+        </div>
+        <ion-card class="custom-card1"  style="--background:transparent !important">
+          <ion-card-content>
+            
+            <img src="../../../assets/imgs/done.svg" >
+            <p style="    font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        ">
+              <span  class="popin-text"style="background-image: linear-gradient(to right, #206bae, #6bae20); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                Valider Votre Orientation
+              </span>
+            </p>
+            <ion-button shape="square" strong="true"  class="ion-margin-end" 
+             style="margin-left: 227px; height: 60px;
+            width: 163px;    margin-left: 42px;
+            margin-top: 28px;
+
+            --background: #337c8bf7 !important;" (click)="addOrientation()">
+              Valider
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      
+      </ion-slide>
+   
+
+  </ion-slides>
+  <div class="swiper-pagination" style="        margin-top: -49px;
+
+  margin-left: 175px"></div>
+
+  </form> -->
+  <!-- MultiStep Form -->
+  
+<!-- /.MultiStep Form -->
+<div class="container">
+  <div class="card">
+    <form [formGroup]="Orientationform" >
+    <div class="form">
+      <div class="right-side">
+        <div class="main active">
+          <ion-icon name="information-circle-outline" ></ion-icon>
+          <div class="text">
+            <h2 style="    font-size: 36px;
+            ">Informations Orientation</h2>
+            <p>Entrer les informations de votre orientation.</p>
+          </div>
+          <div class="input-text">
+            <div class="input-div">
+              <input type="text" formControlName="titre"   placeholder="Titre Orientation" required id="user_name" />
+            </div>
+            <div class="input-div">
+              <textarea type="text"  formControlName="description"  placeholder="Description Orientation" required id="user_name"></textarea>
+            </div>
+            
+          </div>
+          
+          <ion-item style="    --border-style: none;
+          ">
+            <p> Accedez à votre profil?</p>
+            <ion-toggle formControlName="accesProfil" [value]="true"  style="    height: 24px;
+            margin-left: 10px;
+            width: 43px;"></ion-toggle>
+
+          </ion-item>
+          <ion-button shape="round" strong="true" class="ion-margin-end" type="submit"  style=" margin-left: 204px;
+          margin-top: 15px;
+          width: 89px;
+          --background: #2872a1;
+      "   (click)="addOrientation()">
+            <ion-icon name="checkmark-done-circle-outline"></ion-icon>  <p style="    margin-left: 17px;
+            ">Valider</p>    </ion-button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+</ion-content>

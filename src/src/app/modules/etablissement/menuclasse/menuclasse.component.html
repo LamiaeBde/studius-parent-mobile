@@ -1,0 +1,142 @@
+<ion-header class="ion-no-border">
+  <ion-item lines="none">
+    <ion-buttons slot="start" style="    margin-left: -17px;
+    " >
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="chevron-back-outline" style="    height: 70px;
+        width: 33px;
+        margin-left: -4px;
+        color: white;
+    "></ion-icon>
+    <p style="    margin-top: 13px;
+    font-size: 21px;
+    color: white;">Back</p>
+      </ion-button>
+    </ion-buttons>
+   
+  </ion-item>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+
+  <div class="main-header"></div>
+
+  <ion-grid style="       top: -106px;
+
+  ">
+    <ion-row>
+      <ion-col size="6">
+       
+      </ion-col>
+      
+    </ion-row>
+
+  
+
+    <ion-row class="ion-margin-horizontal" style="        margin-top: 130px;
+    ;
+    ">
+      <ion-col size="6">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <div align="center">
+              <ion-thumbnail>
+                <img  src="../../../assets/imgs/marks.png">
+              </ion-thumbnail>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label color="dark">Mes Notes</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <div align="center">
+              <ion-thumbnail>
+                <img  src="../../../assets/imgs/result2.png">
+              </ion-thumbnail>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label color="dark">Mon Bulletin</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <div align="center">
+              <ion-thumbnail>
+                <img  src="../../../assets/imgs/table.png">
+              </ion-thumbnail>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label color="dark">Emploi de temps</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <div align="center">
+              <ion-thumbnail>
+                <img  src="../../../assets/imgs/cancel.png">
+              </ion-thumbnail>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label color="dark">Mes abscences</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <div align="center">
+              <ion-thumbnail>
+                <img  src="../../../assets/imgs/punish.png">
+              </ion-thumbnail>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label color="dark">Mes sanctions</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <div align="center">
+              <ion-thumbnail>
+                <img  src="../../../assets/imgs/event1.png">
+              </ion-thumbnail>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label color="dark">Mes événement</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="ion-text-center" (click)="orientation()">
+          <ion-card-header>
+            <div align="center">
+              <ion-thumbnail>
+                <img  src="../../../assets/imgs/rotate.png">
+              </ion-thumbnail>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label color="dark">Mes orientations</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+ 
+  </ion-grid>
+  
+</ion-content>

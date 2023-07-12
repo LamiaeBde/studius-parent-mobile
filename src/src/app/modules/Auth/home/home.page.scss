@@ -1,0 +1,100 @@
+#content {
+  --background: var(--ion-color-dark) url("../../../../assets/imgs/parents.jpg")
+    no-repeat center center/cover;
+
+    img{
+      padding-top: 20px;padding-left: 52px;max-width: 93% !important;
+    }
+
+    ion-card{
+      margin-top: -208px;height: 188px;
+    }
+}
+#card {
+ background: white;
+}
+ion-menu{
+  ion-content{
+    img{
+
+      margin-block: 54px;
+  
+    }
+    ion-button{
+      margin-left: -13px;margin-right: -14px;
+    }
+  }
+}
+
+
+ion-list {
+  transform: translateY(15vh);
+  background: transparent;
+  margin-top: 110px;
+  img {
+    background: rgba(255, 255, 255, 0);
+    height: 15vh;
+    border-radius: 50%;
+    margin-bottom: 0vh;
+  }
+  // ion-list-header {
+  //   margin-bottom: 15vh;
+  //   letter-spacing: 3px;
+  //   ion-label {
+  //     font-weight: bold;
+  //     font-size: 3rem;
+  //     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  //   }
+  // }
+
+  ion-button {
+    font-weight: bold;
+    text-transform: none;
+    margin: 1vh;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+.btnlog {
+  background-image: linear-gradient(90deg, #206bae, #6bae20) !important;
+}
+ion-icon{
+  color:white;
+  height: 40px;
+  width:80px;
+  margin-left: -20px;
+}
+ion-card {
+  box-shadow: none;
+  height: 30%;
+  top: 42%;
+  left: 0%;
+  right: 5%;
+  border-radius: 20px;
+  padding: 0px;
+ background: #dcdcdcb0;
+  h2 {
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  ion-button {
+    --ion-color-primary: linear-gradient(
+      135deg,
+      #206bae 20%,
+      #6bae20 100%
+    ) !important;
+    --ion-button-round-border-radius: 10px 50px 10px 50px;
+    --ion-button-border-radius: 10px 50px 10px 50px;
+    --ion-border-radius: 10px 50px 10px 50px;
+    --border-radius: 10px 50px 10px 50px;
+  }
+  .registerBtn {
+  }
+  .toolbar-background {
+  background: black !important;
+  }
+}

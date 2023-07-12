@@ -1,0 +1,490 @@
+// #bg {
+//     height: 50%;
+//     background: linear-gradient(#2570A2, #4B925C);
+
+//   //  background: var(--ion-color-dark) url('../../../../assets/imgs/leaves.jpg') no-repeat center center/cover;
+//     border-radius: 0 0 45% 45%;
+//     // margin-left: -21vw;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     img {
+//         width: 86% !important;
+//         max-width: 200px; 
+//         height: auto;
+//       }
+// }
+// ion-fab {
+//     ion-icon {
+//         font-size: 2.5rem;
+//     }
+// }
+// ion-fab {
+//     position: fixed;
+//     top: 56%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+
+// @media only screen and (max-width: 768px) {
+//     #bg {
+//       height: 36%;
+//       background: linear-gradient(#2570A2, #4B925C);
+//       border-radius: 0 0 20% 20%;
+//       margin-left: 0;
+//     }}
+
+//   @media only screen and (min-width: 769px) and (max-width: 1024px) {
+//     #bg {
+//     }
+
+//   }
+//   @media only screen and (max-width: 768px) {
+//     ion-content {
+//       overflow-y: hidden; /* Disable scrolling */
+//     }
+//   }
+//   @media only screen and (min-width: 1025px) {
+//     #bg {
+//     }
+
+//   }
+
+// ion-list {
+//     margin-top: 6vh;
+//     ion-list-header { 
+//         font-weight: 1000;
+//         font-size: 1.5rem;
+//     }
+//     ion-item {
+//         border: 1px solid var(--ion-color-light);
+//         border-radius: 20px;
+//         -webkit-box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+//         -moz-box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+//         box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+
+//     }
+//     p {
+//         font-size: 0.8rem;
+//         padding-left: 5vw;
+//     }
+// }
+// ion-button {
+//     --ion-color-primary: linear-gradient(
+//       135deg,
+//       #206bae 20%,
+//       #6bae20 100%
+//     ) !important;
+//     --ion-button-round-border-radius: 10px 50px 10px 50px;
+//     --ion-button-border-radius: 10px 50px 10px 50px;
+//     --ion-border-radius: 10px 50px 10px 50px;
+//     --border-radius: 10px 50px 10px 50px;
+//   }
+#bg {
+    height: 40%;
+    // background: var(--ion-color-dark) url("../../../../assets/imgs/Studius.svg")
+    //   no-repeat center center/cover;
+    background: linear-gradient(90deg, #206bae, #6bae20) !important;
+    border-radius: 0 0 45% 45%;
+    margin-left: -21vw;
+    position: relative;
+    text-align: center;
+
+    margin-right: -20%;
+    padding-top: 9%;
+
+    img {
+        width: 60%;
+        /* Adjust the width as needed */
+        max-width: 400px;
+        /* Set a maximum width to ensure the image doesn't become too large */
+        height: auto;
+    }
+}
+
+ion-fab {
+    ion-icon {
+        font-size: 2.5rem;
+    }
+}
+ion-fab {
+         position: fixed;
+         top: 59%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+    
+  
+ion-list {
+    margin-top: 6vh;
+
+    ion-list-header {
+        font-weight: 1000;
+        font-size: 1.5rem;
+    }
+
+    ion-item {
+        border: 1px solid var(--ion-color-light);
+        border-radius: 20px;
+        -webkit-box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+        -moz-box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+        box-shadow: 0 6px 4px -4px var(--ion-color-medium);
+    }
+
+    p {
+        font-size: 0.8rem;
+        padding-left: 5vw;
+    }
+}
+
+.hdtext {
+    width: 188px;
+}
+
+.btnlog {
+    --ion-color-primary: linear-gradient(135deg,
+            #206bae 20%,
+            #6bae20 100%) !important;
+    --ion-button-round-border-radius: 10px 50px 10px 50px;
+    --ion-button-border-radius: 10px 50px 10px 50px;
+    --ion-border-radius: 10px 50px 10px 50px;
+    --border-radius: 10px 50px 10px 50px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 24px;
+    padding-top: 1%;
+    padding-right: 48%;
+    margin-top: 2%;
+    color: #666666;
+}
+
+// .imdcont {
+//     @media screen and (width: 200px) {
+//         margin-top: 21px;
+
+//     }
+
+//     @media screen and (width: 768px) {
+//         margin-top: 21px;
+
+//     }
+
+//     @media screen and (width: 667px) {
+//         margin-top: -57px;
+//         width: 39%;
+//         margin-left: 281px;
+//     }
+
+    
+//     @media screen and (width: 900px) {
+//         margin-top: -78px !important;
+//         width: 32%;
+//         margin-left: 439px;
+//     }
+
+//     @media screen and (width: 899px) {
+//         margin-top: -78px !important;
+//         width: 32%;
+//         margin-left: 439px;
+//     }
+
+    
+//     @media screen and (width: 896px) {
+//         margin-top: -65px !important;
+//         width: 32%;
+//         margin-left: 434px;
+//     }
+
+//     @media screen and (width: 912px) {
+//         margin-top: 16px !important;
+//         width: 57%;
+//         margin-left: 281px;
+//     }
+//     @media screen and (width: 914px) {
+//         margin-top: 16px !important;
+//         width: 57%;
+//         margin-left: 281px;
+//     }
+
+//     @media screen and (width: 915px) {
+//         margin-top: 16px !important;
+//         width: 57%;
+//         margin-left: 281px;
+//     }
+//     @media screen and (width: 1368px) {
+//         margin-top: -40px !important;
+//         width: 57%;
+//         margin-left: 419px;
+//     }
+//     @media screen and (width: 1180px) {
+//         margin-top: -40px !important;
+//         width: 57%;
+//         margin-left: 371px;
+//     }
+
+//     @media screen and (width: 540px) {
+//         margin-top: -20px !important;
+
+//     }
+
+//     @media screen and (width: 844px) {
+//         margin-top: -65px !important;
+//         width: 32%;
+//         margin-left: 434px;
+//     }
+
+//     @media screen and (width: 653px) {
+//         margin-top: -65px !important;
+//         width: 32%;
+//         margin-left: 434px;
+//     }
+
+//     @media screen and (width: 720px) {
+//         margin-top: -32px !important;
+//         width: 43%;
+//         margin-left: 305px;
+//     }
+//     @media screen and (width: 740px) {
+//         margin-top: -55px !important;
+//         width: 32%;
+//         margin-left: 357px;
+//     }
+
+//     @media screen and (width: 851px) {
+//         margin-top: -65px !important;
+//         width: 32%;
+//         margin-left: 434px;
+//     }
+
+//     @media screen and (width: 1280px) {
+//         margin-top: -99px !important;
+//         margin-left: 31px;
+
+//         #bg {
+//             height: 80%;
+//         }
+//     }
+//     @media screen and (width: 1024px) {
+//         margin-top: -78px !important;
+//         width: 32%;
+//         margin-left: 486px;
+//     }
+
+
+    
+// }
+
+ion-fab {
+    @media (orientation :landscape) and (min-width: 844px) {
+    position: fixed;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }}
+  
+ion-fab {
+    @media (orientation :landscape) and (min-width :667px)
+    { 
+    position: fixed;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }}
+  ion-fab {
+    @media (orientation :landscape) and (min-width :1180px)
+    { 
+    position: fixed;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }}
+  ion-fab {
+    @media (orientation :landscape) and (min-width :1024px)
+    { 
+    position: fixed;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }}
+  ion-fab {
+    @media (orientation :landscape) and (min-width :653px)
+    { 
+    position: fixed;
+    top: 54%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }}
+  ion-fab {
+    @media (orientation :landscape) and (min-width :914px)
+    { 
+    position: fixed;
+    top: 56%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }}
+  ion-fab {
+    @media (orientation :landscape) and (min-width :667px)
+    { 
+    position: fixed;
+    top: 55%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }}
+  ion-fab {
+    @media screen and (min-width :1024px)
+    { 
+    position: fixed;
+    top: 57%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }}
+  ion-fab {
+    @media (orientation :landscape) and (min-width :1024px)
+    { 
+    position: fixed;
+    top: 58%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+  }}
+  ion-fab {
+    @media screen and (min-width :1280px)
+    { 
+    position: fixed;
+    top: 58%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+  }}
+  ion-fab {
+    @media (orientation :landscape) and (min-width :1368px)
+    { 
+    position: fixed;
+    top: 49%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+  }}
+  ion-fab {
+    @media (orientation :landscape) and (min-width :720px)
+    { 
+    position: fixed;
+    top: 57%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+  }}
+#bg{
+   
+    @media screen and (min-width: 1024px) {
+        margin-top: -12px;
+        img{
+            width: 35%;
+    max-width: 350px;
+    height: auto;
+    margin-top: -76px;
+}
+
+        }
+        @media (orientation :landscape) and (min-width :667px)
+        {
+            margin-top: -12px;
+        img{
+            width: 23%;
+            max-width: 350px;
+            height: auto;
+            margin-top: -44px;
+        }
+        }
+        @media (orientation :landscape) and (min-width :896px)
+        {
+            margin-top: -12px;
+        img{
+            width: 19%;
+            max-width: 350px;
+            height: auto;
+            margin-top: -58px;  
+        }
+        }
+        @media (orientation :landscape) and (min-width :844px)
+        {
+            margin-top: -12px;
+        img{
+            width: 19%;
+            max-width: 350px;
+            height: auto;
+            margin-top: -62px;  
+        }
+        }
+     
+    @media (orientation :landscape) and (min-width :740px)
+    {
+        margin-top: -12px;
+    img{
+        width: 19%;
+        max-width: 350px;
+        height: auto;
+        margin-top: -45px;
+    }
+    }
+    @media (orientation :landscape) and (min-width :740px)
+    {
+        margin-top: -12px;
+    img{
+        width: 19%;
+        max-width: 350px;
+        height: auto;
+        margin-top: -66px;
+    }
+    }
+    @media (orientation :landscape) and (min-width :653px)
+    {
+        margin-top: -12px;
+    img{
+        width: 17%;
+        max-width: 350px;
+        height: auto;
+        margin-top: -44px;
+    }
+    }
+    @media (orientation :landscape) and (min-width :914px)
+    {
+        margin-top: -12px;
+    img{
+        width: 17%;
+        max-width: 350px;
+        height: auto;
+        margin-top: -54px;
+    }
+    }
+    @media (orientation :landscape) and (min-width :1500px)
+    {
+        margin-top: -12px;
+        img{
+            width: 17%;
+            max-width: 350px;
+            height: auto;
+            margin-top: -54px;
+        }
+    }
+// @media screen and (min-width :1245px){
+//     width: 31%;
+//     max-width: 350px;
+//     height: auto;
+//     margin-top: -69px;
+// }
+@media screen and (min-width :1280px){
+ height: auto;
+    margin-top: -40px;
+}
+}
+
+ion-button {
+    --ion-color-primary: linear-gradient(135deg,
+            #206bae 20%,
+            #6bae20 100%) !important;
+    --ion-button-round-border-radius: 10px 50px 10px 50px;
+    --ion-button-border-radius: 10px 50px 10px 50px;
+    --ion-border-radius: 10px 50px 10px 50px;
+    --border-radius: 10px 50px 10px 50px;
+}

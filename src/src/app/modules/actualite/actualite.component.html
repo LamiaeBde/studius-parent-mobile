@@ -1,0 +1,89 @@
+<!-- <ion-content>
+  <div class="container mt-5" style="margin-top: 13rem!important;    margin-left: 23px !important;  ">
+    <div class="my-custom-scrollbar my-custom-scrollbar-primary">
+      <div class="row" style="overflow-y: auto;">
+        <div class="col-md-3" *ngFor="let x of postlist; let i=index">
+          <div class="card" style="margin-bottom: 25px;">
+
+            <div  >
+            <div class="image-container">
+              <div class="first">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="discount">2023-02-22</span>
+                  <span class="wishlist">
+                    <ion-icon *ngIf="!x.isLiked" (click)="likeButtonClick(x.id,i)" slot="end" name="heart-outline"></ion-icon>
+                    <ion-icon *ngIf="x.isLiked" (click)="likeButtonClick(x.id,i)" slot="end" color="danger" name="heart"></ion-icon>
+                  </span>
+                </div>
+              </div>
+              <div class="thumbnail-container">
+                <img [src]="'data:image/png;base64,'+x.actualiteImages[0].bytefile" class="thumbnail-image" (click)="ShowDetails(x.id)">
+              </div>
+            </div>
+            <div class="product-detail-container p-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="dress-name">{{x?.titre}}</h5>
+                <div class="d-flex flex-column mb-2">
+                  <span class="new-price"></span>
+                  <small class="old-price text-right"></small>
+                </div>
+              </div>
+            
+              <div class="d-flex justify-content-between align-items-center pt-1">
+                <div>
+                  <i class="fa fa-star-o rating-star"></i>
+                  <span class="rating-number"></span>
+                </div>
+                <span class="buy"></span>
+              </div>
+            </div>
+          </div>
+       </div> </div>
+      </div>
+    </div>
+  </div>
+</ion-content> -->
+<ion-content>
+
+  <div class="container mt-5" style="margin-top: 13rem!important; overflow-x: auto;">
+    <div class="row justify-content-between">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngFor="let x of postlist; let i=index" style="margin-right: 10px;">
+        <div class="card fold-card" style="margin-bottom: 25px;">
+          <div>
+            <div class="image-container">
+              <div class="first">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="discount">2023-02-22</span>
+                  <span class="wishlist">
+                    <ion-icon *ngIf="!x.isLiked" (click)="likeButtonClick(x.id,i)" slot="end" name="heart-outline"></ion-icon>
+                    <ion-icon *ngIf="x.isLiked" (click)="likeButtonClick(x.id,i)" slot="end" color="danger" name="heart"></ion-icon>
+                  </span>
+                </div>
+              </div>
+              <div class="thumbnail-container">
+                <img [src]="'data:image/png;base64,'+x.actualiteImages[0].bytefile" class="thumbnail-image" (click)="ShowDetails(x.id,x.isLiked)">
+              </div>
+            </div>
+            <div class="product-detail-container p-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="dress-name">{{x?.titre}}</h5>
+                <div class="d-flex flex-column mb-2">
+                  <span class="new-price"></span>
+                  <small class="old-price text-right"></small>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center pt-1">
+                <div>
+                  <i class="fa fa-star-o rating-star"></i>
+                  <span class="rating-number"></span>
+                </div>
+                <span class="buy"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
